@@ -1,0 +1,36 @@
+# Site Configuration for DEFCON 308 (Western Nebraska)
+
+name: DEFCON 308
+description: DEFCON 308 - Western Nebraska
+avatar: /images/dc308-logo.jpeg
+
+footer-links:
+  email: toor@dc308.com
+  github: DC308-COM
+  rss: true
+
+# Base site URL (GitHub Pages default; override with custom domain if active)
+url: https://dc308-com.github.io
+baseurl: ""
+
+permalink: /:title/
+version: v1.2.0
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+sass:
+  style: :expanded
+
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post-card">
+      <div class="post-meta">{{ post.date | date: "%Y.%m.%d" }}</div>
+      <h2 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <div class="post-excerpt">
+        {% if post.description %}
+          <p>{{ post.description }}</p>
+        {% else %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+      </div>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">read more →</a>
+    </article>
+  {% endfor %}
+</div>
+
+<p class="tagline"><em>DEFCON Group 308 &middot; Western Nebraska &middot; Go Big Red!</em> 🌽</p>

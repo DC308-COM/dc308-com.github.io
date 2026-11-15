@@ -1,0 +1,100 @@
+/* Styles for interactive diagram viewer (pan, zoom, fullscreen) */
+:root {
+  --bg: #07090f;
+  --panel: #0c1018;
+  --hairline: #1e293b;
+  --accent: #2563eb;
+  --hover: #1e293b;
+  --muted: #94a3b8;
+}
+
+.diagram-view {
+  margin: 1.4rem 0 1.6rem;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.diagram-toolbar {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #0f172a;
+}
+
+.diagram-toolbar button {
+  background: var(--bg);
+  color: #38bdf8;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.diagram-toolbar button:hover {
+  background: var(--hover);
+  color: #7dd3fc;
+}
+
+.diagram-stage {
+  height: 480px;
+  overflow: hidden;
+  cursor: grab;
+  background: #07090f;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram-stage.is-grabbing {
+  cursor: grabbing;
+}
+
+.diagram-stage img,
+.diagram-stage svg,
+.diagram-stage .mermaid {
+  transform-origin: 0 0;
+  max-width: none;
+}
+
+.diagram-caption {
+  padding: 0.65rem 0.85rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  border-top: 1px solid var(--hairline);
+  background: #0c1018;
+}
+
+.diagram-open {
+  margin-left: auto;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: none;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.diagram-open:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+.diagram-view:fullscreen {
+  background: var(--bg);
+  width: 100%;
+  height: 100%;
+}
+
+.diagram-view:fullscreen .diagram-stage {
+  height: calc(100vh - 4.5rem);
+}
